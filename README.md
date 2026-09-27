@@ -101,3 +101,7 @@ libraries.
 The UI uses [Sora](https://github.com/sora-xor/sora-font) and
 [IBM Plex Sans](https://github.com/IBM/plex), both under the SIL Open Font License.
 Their licenses are in [`licenses/`](licenses/).
+
+## License
+
+MIT. See [LICENSE](LICENSE). The fonts keep their own OFL license.
