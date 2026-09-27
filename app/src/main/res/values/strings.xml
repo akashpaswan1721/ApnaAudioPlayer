@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">ApnaAudioPlayer</string>
+    <string name="permission_title">Let\'s find your music</string>
+    <string name="permission_body">Allow access to audio files on this TV and any USB drive you plug in. Your music stays on this device.</string>
+    <string name="allow_access">Allow access</string>
+    <string name="not_now">Not now</string>
+    <string name="loading">Scanning for music…</string>
+    <string name="empty_title">No MP3 files yet</string>
+    <string name="empty_body">We looked on this TV and didn\'t find any music.</string>
+    <string name="empty_step_1">Plug a USB drive with MP3 files into the TV.</string>
+    <string name="empty_step_2">Give the TV a moment to read the drive.</string>
+    <string name="empty_step_3">Select Scan again.</string>
+    <string name="scan_again">Scan again</string>
+    <string name="music">Music</string>
+    <string name="storage_sources">Internal storage · USB drive</string>
+    <string name="songs">Songs</string>
+    <string name="albums">Albums</string>
+    <string name="artists">Artists</string>
+    <string name="folders">Folders</string>
+    <string name="sort_label">A–Z · Title</string>
+    <string name="sort_label_name">A–Z · Name</string>
+    <string name="col_album">Album</string>
+    <string name="col_folder">Folder</string>
+    <string name="col_location">Location</string>
+    <string name="col_songs">Songs</string>
+    <string name="unknown_album">Unknown album</string>
+    <string name="various_artists">Various artists</string>
+    <string name="internal_storage">Internal storage</string>
+    <string name="usb_drive">USB drive</string>
+    <string name="storage_root">Top level</string>
+    <string name="col_number">#</string>
+    <string name="col_title">Title</string>
+    <string name="col_artist">Artist</string>
+    <string name="col_time">Time</string>
+    <string name="library">Library</string>
+    <string name="now_playing">Now playing</string>
+    <string name="up_next">Up next</string>
+    <string name="track_number">Track %1$d</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="repeat">Repeat</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="seek_bar">Seek bar. Left and right skip 10 seconds</string>
+    <plurals name="song_count">
+        <item quantity="one">%d song</item>
+        <item quantity="other">%d songs</item>
+    </plurals>
+    <plurals name="album_count">
+        <item quantity="one">%d album</item>
+        <item quantity="other">%d albums</item>
+    </plurals>
+</resources>
