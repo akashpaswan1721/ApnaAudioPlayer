@@ -42,6 +42,8 @@
     <string name="next">Next</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>
+    <string name="playback_channel">Playback</string>
+    <string name="playback_channel_description">Shows what\'s playing and lets you control it</string>
     <string name="seek_bar">Seek bar. Left and right skip 10 seconds</string>
     <plurals name="song_count">
         <item quantity="one">%d song</item>
