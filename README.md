@@ -24,7 +24,9 @@ made one that's properly usable with a D-pad.
 - Shows album art. It uses the cover embedded in the file, and if there isn't one it
   looks for a `cover.jpg` / `folder.jpg` / `front.jpg` in the same folder.
 - Has shuffle, repeat (off / all / one) and an "up next" line on the Now Playing screen.
-- Works with the media buttons on your remote, whatever is on screen.
+- Keeps playing when you leave the app. The remote's media buttons still work, it
+  shows up in the TV's own media controls, and it pauses when another app starts
+  playing sound.
 - Uses a dark, warm theme with big, high-contrast focus states, so you can always tell
   where you are from across the room.
 
@@ -69,13 +71,14 @@ too (in landscape), but it's really built for a remote.
 
 ## Permissions
 
-Just one: access to audio files (`READ_MEDIA_AUDIO` on Android 13+,
-`READ_EXTERNAL_STORAGE` on older versions). The app has no internet permission, so
+The only one you'll be asked for is access to audio files (`READ_MEDIA_AUDIO` on
+Android 13+, `READ_EXTERNAL_STORAGE` on older versions). Background playback also
+needs a few that Android grants automatically: a media foreground service and a wake
+lock so the TV doesn't sleep mid-song. The app has no internet permission, so
 nothing leaves the device.
 
 ## Known limitations
 
-- Music stops when you leave the app. There's no background playback service yet.
 - No playlists or search yet.
 - Playback goes through Android's built-in `MediaPlayer`, so which formats work
   (MP3, AAC, FLAC, OGG…) depends on what your TV supports.
@@ -88,7 +91,8 @@ nothing leaves the device.
 app/src/main/java/com/apnaaudioplayer/io/
 ├── MainActivity.kt      screen switching, permission, remote media keys
 ├── AudioRepository.kt   scans MediaStore on every storage volume
-├── Player.kt            MediaPlayer wrapper: queue, shuffle, repeat
+├── Player.kt            MediaPlayer wrapper: queue, shuffle, repeat, audio focus
+├── PlaybackService.kt   background playback, media session, notification
 ├── AlbumArt.kt          embedded + folder cover art, with a small cache
 └── ui/                  Jetpack Compose for TV screens and components
 ```

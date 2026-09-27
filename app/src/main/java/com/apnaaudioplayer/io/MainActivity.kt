@@ -46,11 +46,10 @@ private val AUDIO_PERMISSION =
 
 class MainActivity : ComponentActivity() {
 
-    private lateinit var player: Player
+    private val player get() = (application as ApnaApp).player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        player = Player(applicationContext)
         setContent {
             ApnaAudioPlayerTheme {
                 Surface(
@@ -81,16 +80,6 @@ class MainActivity : ComponentActivity() {
         }
         return super.dispatchKeyEvent(event)
     }
-
-    override fun onStop() {
-        super.onStop()
-        player.pause()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        player.release()
-    }
 }
 
 private enum class Screen { Library, NowPlaying }
@@ -117,7 +106,9 @@ private fun PlayerApp(player: Player) {
         tracks = null
         scope.launch {
             val found = AudioRepository.loadTracks(context)
-            player.updateTracks(found)
+            // Leave the queue alone if music is already going (e.g. the app was reopened
+            // mid-album); otherwise the whole library becomes the queue for the play key.
+            if (player.current == null) player.updateTracks(found)
             tracks = found
         }
     }
